@@ -1,0 +1,16 @@
+.top-margin {
+	margin-top: 20px
+}
+
+.ct-series-a .ct-line {
+  /* Set the colour of this series line */
+  stroke: #5bc0de;
+  /* Control the thikness of your lines */
+  stroke-width: 5px;
+}
+
+.ct-series-a .ct-point {
+  /* Colour of your points */
+  stroke: #428bca;
+
+}

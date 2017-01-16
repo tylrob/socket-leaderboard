@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Scoring Controls</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/main.css">
+	</head>
+	<body>
+
+		<div class="container">
+			<div id="layout-hook"></div>
+		</div>
+
+		<!-- Layout template -->
+		<script type="text/template" id="layout">
+			<div id="scoring-region"></div>
+			<h3>Leaderboard</h3>			
+			<div id="main-region"></div>	
+		</script>
+
+		<!-- Scoring template -->
+		<script type="text/template" id="scoring-template">
+			<h3>Scoring</h3>
+			<form>
+				<div class="form-group">
+					<label>Athlete</label>
+					<input type="text" class="form-control input-lg" name="athlete" placeholder="Athlete Name">
+				</div>
+				<div class="form-group">
+					<label>Score</label>
+					<input type="text" class="form-control input-lg" name="score" placeholder="Score">
+				</div>
+				<button type="button" class="btn btn-default btn-lg" id="submit-button">Add Score</button>
+			</form>
+		</script>
+		
+		<!-- Table Template -->
+		<script type="text/template" id="table-template">
+				<thead>
+					<tr>
+						<th class="col-xs-3"></th>
+						<th class="col-xs-3"></th>
+						<th class="col-xs-3"></th>
+					</tr>
+				</thead>
+				<tbody>
+				</tbody>
+		</script>
+
+		<!-- Row Template -->
+		<script type="text/template" id="row-template">
+			<td style="vertical-align: middle">
+				<%= athlete %>
+			</td>
+			<td style="vertical-align: middle">
+				<%= score %>
+			</td>
+			<td style="vertical-align: middle">
+				<div class="pull-right">
+					<button type="button" class="delete-score btn btn-default">
+						<span class="glyphicon glyphicon-trash"></span>
+					</button>
+				</div>
+			</td>			
+		</script>
+
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/underscore.js"></script>
+    	<script src="/socket.io/socket.io.js"></script>
+		<script type="text/javascript" src="js/backbone.js"></script>
+		<script type="text/javascript" src="js/backbone.iobind.js"></script>		
+		<script type="text/javascript" src="js/backbone.iosync.js"></script>
+		<script type="text/javascript" src="js/backbone.radio.js"></script>
+		<script type="text/javascript" src="js/backbone.marionette.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/main-scoring.js"></script>
+	</body>
+</html>
