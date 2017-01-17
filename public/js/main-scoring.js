@@ -14,7 +14,7 @@ var Score = Backbone.Model.extend({
 	urlRoot: 'scores',
 	defaults: {
 		"athlete": 'Athlete',
-		"score": 100
+		"score": 0
 	},
 	initialize: function(){
 		_.bindAll(this, 'serverDelete');
@@ -67,11 +67,17 @@ var ScoringView = Marionette.View.extend({
 		'click #submit-button': 'addScore'
 	},
 	addScore: function(){
+		var inputAthlete = this.$('input[name="athlete"]').val();
+		var inputScore = this.$('input[name="score"]').val();
+
 		var score = new Score({
-			'athlete': 'Tyler',
-			'score': 112
+			'athlete': inputAthlete,
+			'score': inputScore
 		});
 		score.save();
+
+		this.$('input[name="athlete"]').val('');
+		this.$('input[name="score"]').val('');
 	}
 });
 

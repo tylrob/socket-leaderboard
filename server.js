@@ -42,12 +42,12 @@ io.on('connection', function(socket){
 	});
 
 	//Create
-	socket.on('scores:create', function(data, callback){
+	socket.on('scores:create', function(score, callback){
 		console.log('Server heard scores:create event');
 		var score = {
 			'id': uuid.v4(),
-			'athlete':'mr. server',
-			'score':123
+			'athlete': score.athlete,
+			'score': score.score
 		};
 		
 		//save score to our mock database, too
